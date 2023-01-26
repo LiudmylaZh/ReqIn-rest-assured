@@ -18,17 +18,24 @@ public class LoginPage {
     static
     WebElement loginButton;
 
+    @FindBy(css = "[data-test=\"error\"]")
+    WebElement errorLockedUser;
+
+    @FindBy (css = "[data-test=\"error\"]")
+    WebElement errorMessage;
+
     public LoginPage (WebDriver driver) {
         this.driver = driver;
 
         PageFactory.initElements(driver, this);
     }
 
-    public static void login(String userNameParams, String passwordParams) {
-        userName.sendKeys(userNameParams);
-        password.sendKeys(passwordParams);
+    public void login(User user){
+        userName.sendKeys(user.getName());
+        password.sendKeys(user.getPassword());
         loginButton.click();
 
 
     }
+
 }

@@ -1,34 +1,24 @@
-import org.junit.After;
-import org.junit.Before;
 import org.junit.Test;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
 
-import java.time.Duration;
+import static java.lang.Thread.sleep;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertTrue;
 
-public class LoginTests {
-    WebDriver driver;
-    @Before
-    public void setUp() {
-        System.setProperty("webdriver.chrome.driver", "/Users/liudmyla/Desktop/Tel-ran/QA/chromedriver");
-        driver = new ChromeDriver();
-        String BASE_URL = "https://www.saucedemo.com/";
-        driver.get(BASE_URL);
-        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(30));
-        driver.manage().window().maximize();
-    }
+public class LoginTests extends TestBase{
     @Test
     public void logingWithValidData(){
-       String userName = "standard_user";
-       String password = "secret_sauce";
+        User user = new User(userName, password);
         LoginPage loginPage = new LoginPage(driver);
         InventoryPage inventoryPage = new InventoryPage(driver);
-        loginPage.login(userName, password);
-
+        loginPage.login(user);
+        assertTrue(inventoryPage.inventoryList.isDisplayed());
     }
+@Test
+    public void loginOutUser() throws InterruptedException {
+        User lockedOutUser = new User(lockedOutUserName, lockedOutPassword);
+        LoginPage loginPage = new LoginPage(driver);
+        loginPage.login(lockedOutUser);
+        assertTrue(loginPage.errorMessage.isDisplayed());
+}
 
-    @After //выполнение после каждого теса//
-    public void tearDown() {
-        driver.quit();
-    }
 }

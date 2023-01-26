@@ -9,6 +9,8 @@ public class InventoryPage {
     @FindBy(className = "inventoryList")
     WebElement inventoryList;
 
+
+
     public InventoryPage(WebDriver driver) {
         this.driver = driver;
         PageFactory.initElements(driver, this);
