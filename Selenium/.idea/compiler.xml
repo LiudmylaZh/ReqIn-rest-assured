@@ -12,7 +12,7 @@
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
-      <module name="Selenium" options="--add-exports jdk.javadoc/jdk.javadoc.internal.doclets.formats.html.markup=ALL-UNNAMED --add-exports jdk.internal.le/jdk.internal.org.jline.utils=ALL-UNNAMED" />
+      <module name="Selenium" options="--add-exports jdk.javadoc/jdk.javadoc.internal.doclets.formats.html.markup=ALL-UNNAMED --add-exports jdk.management.agent/jdk.internal.agent=ALL-UNNAMED" />
     </option>
   </component>
 </project>
