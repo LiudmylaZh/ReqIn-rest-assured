@@ -42,13 +42,10 @@ public class LoginPageTests extends TestBaseNew {
 
 @Test
     public void allLoginPageElenetsAreDisplayed () {
-    User lockedOutUser = new User(lockedOutUserName, lockedOutPassword);
     LoginPage loginPage = new LoginPage(driver);
-    loginPage.login(lockedOutUser);
-    loginPage.login(lockedOutUser);
     loginPage.logoShouldBeDisplay();
     assertTrue(loginPage.pictureOnLoginPageShoudBeDisplyed());
-    //loginPage.pictureOnLoginPageShoudBeDisplyed();
+    loginPage.pictureOnLoginPageShoudBeDisplyed();
     loginPage.userNameFieldShoudBeDisplyed();
     loginPage.passwordFieldShpuldBeDisplayed();
     loginPage.loginButtonShouldBeDisplyed();

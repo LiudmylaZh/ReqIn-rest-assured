@@ -74,7 +74,7 @@ public class LoginPage extends BasePage {
 
     }
     public boolean pictureOnLoginPageShoudBeDisplyed(){
-        return pictureOnLoginPageShoudBeDisplyed();
+        return pictureOnLoginPage.isDisplayed();
     }
     public void userNameFieldShoudBeDisplyed() {
         assertTrue(userNameField.isDisplayed());

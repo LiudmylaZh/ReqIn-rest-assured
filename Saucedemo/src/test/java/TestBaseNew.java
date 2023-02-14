@@ -1,5 +1,6 @@
 import io.qameta.allure.Attachment;
 import org.junit.After;
+import org.junit.AfterClass;
 import org.junit.Before;
 import org.junit.Rule;
 import org.junit.rules.TestWatcher;
@@ -13,18 +14,27 @@ import java.time.Duration;
 
 public class TestBaseNew {
 
-    /*@Rule
+    @Rule
     public TestWatcher screenshotOnFailure = new TestWatcher() {
         @Override
         protected void failed(Throwable e, Description description) {
             makeScreenshotOnFailure();
+            driver.close();
+            driver.quit();
         }
 
         @Attachment("Screenshot on failure")
         public byte[] makeScreenshotOnFailure() {
             return ((TakesScreenshot) driver).getScreenshotAs(OutputType.BYTES);
         }
-    };*/
+        @Override
+        protected void succeeded(Description description) {
+            driver.close();
+            driver.quit();
+        }
+    };
+
+
     WebDriver driver;
 
     @Before
@@ -37,11 +47,7 @@ public class TestBaseNew {
         driver.manage().window().maximize();
     }
 
-
-    @After
-    public void tearDown() {
-
-        //if (driver != null)
+            public void tearDown (){
         driver.quit();
     }
 

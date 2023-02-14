@@ -1,5 +1,7 @@
 import org.junit.Test;
 
+import static org.junit.Assert.assertTrue;
+
 public class InventoryPageTest extends TestBaseNew {
     @Test
     public void amountOfProducts() {
@@ -36,8 +38,8 @@ public class InventoryPageTest extends TestBaseNew {
         new LoginPage(driver).login(user);
         InventoryPage inventoryPage = new InventoryPage(driver);
         inventoryPage.clickOnTheSideBarOpenIcon();
-        //    inventoryPage.allItemsIsDisplayed();
-        //     inventoryPage.aboutIsDisplayed();
+        assertTrue (inventoryPage.allItemsIsDisplayed());
+        inventoryPage.aboutIsDisplayed();
         inventoryPage.logoutIsDisplayed();
         inventoryPage.resetIsDisplayed();
     }

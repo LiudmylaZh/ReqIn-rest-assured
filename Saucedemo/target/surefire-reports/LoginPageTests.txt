@@ -1,17 +1,7 @@
 -------------------------------------------------------------------------------
 Test set: LoginPageTests
 -------------------------------------------------------------------------------
-Tests run: 5, Failures: 1, Errors: 1, Skipped: 0, Time elapsed: 48.683 s <<< FAILURE! - in LoginPageTests
-loginLockedOutUser(LoginPageTests)  Time elapsed: 15.501 s  <<< FAILURE!
-java.lang.AssertionError
-	at LoginPageTests.loginLockedOutUser(LoginPageTests.java:29)
-
-loginLockedOutUser(LoginPageTests)  Time elapsed: 15.501 s  <<< ERROR!
-org.openqa.selenium.NoSuchSessionException: 
-Session ID is null. Using WebDriver after calling quit()?
-Build info: version: '4.7.1', revision: 'c6795baf1a3'
-System info: os.name: 'Mac OS X', os.arch: 'aarch64', os.version: '13.2', java.version: '19.0.2'
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [null, screenshot {}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 109.0.5414.119, chrome: {chromedriverVersion: 108.0.5359.71 (1e0e3868ee06..., userDataDir: /var/folders/49/8n7p0lfj2gx...}, goog:chromeOptions: {debuggerAddress: localhost:53554}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: MAC, proxy: Proxy(), se:cdp: ws://localhost:53554/devtoo..., se:cdpVersion: 109.0.5414.119, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
+Tests run: 4, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 39.847 s <<< FAILURE! - in LoginPageTests
+allLoginPageElenetsAreDisplayed(LoginPageTests)  Time elapsed: 10.513 s  <<< ERROR!
+java.lang.StackOverflowError
 
