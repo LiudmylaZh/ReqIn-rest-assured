@@ -44,7 +44,8 @@ public class Search {
         return  Stream.of(
                 Arguments.arguments("Java"),
                 Arguments.arguments("Python"),
-                Arguments.arguments("bicycle")
+                Arguments.arguments("Selenide")
+
 
         );
     }
