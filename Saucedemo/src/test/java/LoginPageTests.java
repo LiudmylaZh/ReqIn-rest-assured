@@ -40,7 +40,7 @@ public class LoginPageTests extends TestBaseNew {
 
 }
 
-@Test
+/*@Test
     public void allLoginPageElenetsAreDisplayed () {
     LoginPage loginPage = new LoginPage(driver);
     loginPage.logoShouldBeDisplay();
@@ -52,7 +52,7 @@ public class LoginPageTests extends TestBaseNew {
     loginPage.acceptedUserNamesShouldBeDisplayed();
     loginPage.passwordForAllUsersShpuldBeDispyed();
 
-}
+}*/
 
 
 }

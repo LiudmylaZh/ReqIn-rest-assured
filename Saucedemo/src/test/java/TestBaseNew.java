@@ -9,6 +9,7 @@ import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 
 import java.time.Duration;
 
@@ -40,11 +41,16 @@ public class TestBaseNew {
     @Before
     public void setUp() {
         System.setProperty("webdriver.chrome.driver", "/Users/liudmyla/Desktop/Tel-ran/QA/chromedriver");
-        driver = new ChromeDriver();
+        ChromeOptions options = new ChromeOptions();
+        options.addArguments("--remote-allow-origins=*");
+        //options.addArguments("--start-maximized");
+        //options.addArguments("--window-size=100,200"); //-задает размер экрана
+        //options.addArguments("--headless"); //- тесты в фоновом режиме без открытия браузера
+        driver = new ChromeDriver(options);
         String BASE_URL = "https://www.saucedemo.com/";
         driver.get(BASE_URL);
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(30));
-        driver.manage().window().maximize();
+        //driver.manage().window().maximize();
     }
 
             public void tearDown (){
